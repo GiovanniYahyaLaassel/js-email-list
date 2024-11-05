@@ -11,7 +11,16 @@ for(let i = 0; i < 10; i++) {
     axios
     .get(' https://flynn.boolean.careers/exercises/api/random/mail')
     .then((response) => {
-        console.log(response);
+        // console.log(response);
+
+        // recuperare il valore dell'email
+        const email = response.data.response;
+        console.log(email);
+        // creo un elemnto li
+        const listItem = document.createElement('li');
+        listItem.textContent = email;
+        emailListElement.appendChild(listItem);
     })
+    
 
 }
